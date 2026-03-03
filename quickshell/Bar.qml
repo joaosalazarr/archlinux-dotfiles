@@ -1,4 +1,5 @@
 import Quickshell
+import QtQuick
 
 Scope
 {
@@ -10,6 +11,9 @@ Scope
     {
       required property var modelData
       screen: modelData
+      property color bgColor: "#1a1b26"
+      property color fgColor: "#a9b1d6"
+      property string fontFamily: "JetBrainsMono Nerd Font"
 
       anchors
       {
@@ -19,11 +23,20 @@ Scope
       }
       
       implicitHeight: 30
-      color: "grey"
+      color: bgColor
 
       ClockWidget
       {
         anchors.centerIn: parent
+        color: fgColor
+        font: fontFamily
+      }
+
+      CpuUsageWidget
+      {
+        anchors.right: parent.right
+        color: fgColor
+        font: fontFamily
       }
     }
   }
