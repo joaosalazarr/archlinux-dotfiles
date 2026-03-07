@@ -1,4 +1,6 @@
 -- Bootstrap lazy.nvim
+require("nvim-theme")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
 
@@ -26,13 +28,12 @@ require("lazy").setup({
     -- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-        lazy = false,
+    lazy = false,
 		build = ":TSUpdate",
-        ensure_installed = {
-            "lua", "bash", "python", "json", "yaml",
-	    "qml",
-        },
-    }
+    ensure_installed = {
+      "lua", "bash", "python", "json", "yaml", "qml", 
+    },
+  },
 })
 
 -- Basic Settings
@@ -42,6 +43,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.clipboard:append("unnamedplus")
 
 -- Setup Treesitter
 local ts = require('nvim-treesitter')
