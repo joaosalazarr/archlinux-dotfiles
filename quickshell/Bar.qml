@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
 
 Scope
 {
@@ -25,18 +26,51 @@ Scope
       implicitHeight: 30
       color: bgColor
 
-      ClockWidget
+      RowLayout 
       {
-        anchors.centerIn: parent
-        color: fgColor
-        font: fontFamily
-      }
+        anchors.fill: parent
+        anchors.margins: 8
 
-      CpuUsageWidget
-      {
-        anchors.right: parent.right
-        color: fgColor
-        font: fontFamily
+        // Left Section
+        RowLayout
+        {
+          id: leftSection
+          spacing: 8
+          Layout.alignment: Qt.AlignVCenter
+
+        }
+        
+        Item { Layout.fillWidth: true }
+
+        // Center Section
+        RowLayout
+        {
+          id: centerSection
+          spacing: 8
+          anchors.centerIn: parent
+
+          ClockWidget
+          {
+            color: fgColor
+            font: fontFamily
+          }
+        }
+
+        Item { Layout.fillWidth: true }
+
+        // Right Section
+        RowLayout
+        {
+          id: rightSection
+          spacing: 8
+          Layout.alignment: Qt.AlignVCenter
+
+          CpuUsageWidget
+          {
+            color: fgColor
+            font: fontFamily
+          }
+        }
       }
     }
   }
