@@ -1,0 +1,23 @@
+[general]
+import = [
+"~/.config/alacritty/colors.toml"
+]
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "None"
+
+[font]
+size = 11.0
+
+[font.normal]
+style = "Regular"
+family = "JetBrainsMono Nerd Font"
+
+[font.bold]
+style = "Bold"
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
